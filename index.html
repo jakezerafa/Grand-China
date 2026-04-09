@@ -147,10 +147,7 @@
 
     /* —€�€ Nav —€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€ */
     #navbar {
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    #navbar.scrolled {
-      background-color: rgba(10,10,10,0.97) !important;
+      background-color: rgba(10,10,10,0.97);
       box-shadow: 0 2px 24px rgba(0,0,0,0.8), 0 1px 0 rgba(212,175,55,0.1);
     }
 
@@ -440,8 +437,8 @@
           />
         </a>
 
-        <!-- Desktop nav links -->
-        <div class="hidden md:flex items-center gap-10">
+        <!-- Desktop nav links (centered) -->
+        <div class="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           <a href="#home"    class="nav-link">Home</a>
           <a href="#menu"    class="nav-link">Menu</a>
           <a href="#about"   class="nav-link">About</a>
@@ -487,7 +484,7 @@
   <!-- ═══════════════════════════════════════════════════════════
        HERO / HOME
   ════════════════════════════════════════════════════════════ -->
-  <section id="home" class="hero-bg relative min-h-screen flex items-center justify-center grain" style="min-height: 100svh;">
+  <section id="home" class="hero-bg relative min-h-screen flex items-center justify-center grain" style="min-height: 100svh; padding-top: 80px; padding-bottom: 80px;">
     <div class="hero-overlay"></div>
 
     <!-- Content -->
@@ -535,11 +532,6 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
-      <span class="font-body text-xs tracking-widest uppercase text-off-white/60">Scroll</span>
-      <div class="w-px h-10 bg-gradient-to-b from-gold/60 to-transparent animate-pulse"></div>
-    </div>
   </section>
 
 
