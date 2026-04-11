@@ -387,9 +387,13 @@
 
     /* —€�€ Scroll animation —€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€—€�€ */
     .fade-up {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .fade-up.hidden-anim {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
     }
     .fade-up.visible {
       opacity: 1;
@@ -1515,17 +1519,11 @@
       },
       { threshold: 0, rootMargin: '0px 0px 100px 0px' }
     );
-    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-    // —€�€ Stagger fade-up children in menu section —€—€—€—€—€—€—€
     document.querySelectorAll('.fade-up').forEach((el, i) => {
+      el.classList.add('hidden-anim');
       el.style.transitionDelay = (i * 0.02) + 's';
+      observer.observe(el);
     });
-
-    // Fallback: ensure all elements become visible even if IntersectionObserver doesn't fire
-    setTimeout(() => {
-      document.querySelectorAll('.fade-up').forEach((el) => el.classList.add('visible'));
-    }, 800);
   </script>
 
 </body>
