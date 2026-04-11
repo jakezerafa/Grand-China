@@ -1521,6 +1521,11 @@
     document.querySelectorAll('.fade-up').forEach((el, i) => {
       el.style.transitionDelay = (i * 0.02) + 's';
     });
+
+    // Fallback: ensure all elements become visible even if IntersectionObserver doesn't fire
+    setTimeout(() => {
+      document.querySelectorAll('.fade-up').forEach((el) => el.classList.add('visible'));
+    }, 800);
   </script>
 
 </body>
